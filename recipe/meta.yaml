@@ -1,10 +1,10 @@
 {% set provider = "StatusCake" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
-{% set sha256 = "23aaae29df112a48c7daff85129499af1aa0fd33eefa8f78c6c0494df5a381ff" %}
+{% set sha256 = "2eeb2850a0a03a8e6af487b750dc09a5b484820d4417e0438c3b120001d6d899" %}
 {% set sha256_win64 = "19d81cfb59f7a49de1d4a197a2c4cacddadc970bdec907dcaeb9c117b168c11d" %}
 
 package:
@@ -20,7 +20,7 @@ source:
     sha256: {{ sha256_win64 }}  # [win64]
 
 build:
-  number: 1
+  number: 0
   script:
     - XCOPY src\github.com\terraform-providers\{{ name|lower }}\{{ x4_plugin }}.exe %LIBRARY_BIN%  # [win]
 
